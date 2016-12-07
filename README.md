@@ -5,6 +5,12 @@ This class allows you to run multiple functions in background on timer.
 This class is written in pure C++11, so should be compatible with any compiler supporting C++11.
 This class requires the usage of std::thread, so you may have to link against external threading libraries(such as with gcc and pthread).
 
+All functions across all instances of Periodic are called within single background thread, so if you yield, or otherwise put the thread to sleep,
+the execution of all following functions in the list will be postponed until the thread gains control again.
+
+The order of execution of functions within single Periodic object instance is guaranteed to be in order of insertion. Additionally, the order of execution of individual Periodic object instances
+is guaranteed to be in the order of their construction.
+
 ## API
 ### Typedefs
 * ```Periodic::Function = std::function<void()>```
