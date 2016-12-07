@@ -59,8 +59,9 @@ public:
 			auto& vec = vector.acquire();
 
 			auto time = currentTimeMicro();
-			for(auto& periodic : vec)
+			for(std::size_t i = 0; i < vec.size(); ++i)
 			{
+				auto& periodic = vec[i];
 				if(periodic && periodic->funcs.size())
 					periodic->_check(time);
 			}

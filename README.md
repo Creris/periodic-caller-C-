@@ -19,3 +19,32 @@ This class requires the usage of std::thread, so you may have to link against ex
 	* If periodic is ```false```, the function is removed from the list after it has been invoked.
 
 Apart from those functions, the class provides generic copy, move, normal constructor as well as copy and move assignment operators.
+
+## Example output
+
+The output from the example program will be:
+
+    w()
+    fancy()
+    q()
+    spam()
+    fancy()
+    f()
+    q()
+    fancy()
+    spam()
+    fancy()
+    q()
+    f()
+    fancy()
+    spam()
+    q()
+    fancy()
+    spam()
+    fancy()
+    f()
+    q()
+    spam()
+    spam()
+
+The program will keep printing "spam()" until you terminate the program.
